@@ -24,7 +24,7 @@ int cclear() {
 	uint f;
 
 	putl(CS, 2);
-	f = mminl(CL0);
+	f = getl(CL0);
 	f += cint;
 	putl(C1, f);
 }
