@@ -75,7 +75,7 @@ int panic(const char *str) {
 	panicstr = str;
 	cli();
 	for (;;)
-		hlt();
+		halt();
 }
 
 /*
