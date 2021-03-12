@@ -1,6 +1,6 @@
 #ifndef RASP_H
 #define RASP_H
 
-#include "core/lib.h"
+#include "core/core.h"
 
 #endif /* RASP_H */
