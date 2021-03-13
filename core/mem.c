@@ -50,7 +50,7 @@ char *malloc(int size)
 			ma->m_size -= n;
 			mh->m_area = ma;
 			mh->m_size = n;
-			return mh + sizeof(sturct memhead);
+			return mh + sizeof(struct memhead);
 		}
 		ma = ma->m_next;
 	}
