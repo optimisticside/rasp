@@ -11,14 +11,14 @@
  * programmable interrupt controller
  * memory mapped array of integers
  */
-static int *pic = 0x200B000
+static int *pic = 0x200B000;
 
 /*
  * interrupt vector
  * just a table of interrupt handlers
  * refenced by dispatcher
  */
-static int (*ivec[NIRQ])()
+static int (*ivec[NIRQ])();
 
 /*
  * registers an interrupt handler
