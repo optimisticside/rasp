@@ -74,7 +74,7 @@ int free(char *ptr) {
 		 * we can't use an indirect pointer
 		 * since we have to update ma->m_tail
 		 * with the previous node
-		*/
+		 */
 		wk = ma->m_head;
 		while (*wk != mh) {
 			pv = wk;
