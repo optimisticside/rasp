@@ -69,6 +69,17 @@ Memory is another very important part of any computer. It's what allows the comp
 
 The `free` function not requiring a size of memory to be freed is a feature that was made to mimic what most C programmers are used to, and was a little complicated. A diagram is available below to aid with understanding.
 
+Note that `calloc` has not been implemented since it's just a `malloc` with a `memset`. Here's an implementation of it if you just want it.
+```c
+char *calloc(int size, int unit) {
+	int n = size * unit;
+	char *mem = malloc(n);
+	
+	memset(mem, 0, n);
+	return mem;
+}
+```
+
 Memory is split into a linked list of areas. Eash area has a fixed size which is calculated upon start-up. This is done so that we don't accidently write to memory that's reserved by the BIOS or something else. Each memory area has a header, which stores information about it's size and boundaries, headers, and link to next area.
 
 Each memory allocation has a header that corresponds to it. Each allocation header keeps track of the size, pointer to corresponding memory area header, and pointer to next header (if existent).
