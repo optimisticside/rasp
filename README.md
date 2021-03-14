@@ -47,16 +47,16 @@ int myhandler() {
 	printf("interrupt on line %d", IRQLINE);
 }
 ```
-Now that we have our interrupt handler, we need to register it by making our own initialization function. Note that we have to call this function in our `main` function. We need to make sure we disable interrupts in the beginning (so that they don't mess up our initialization), and then re-enable them at the end
+Now that we have our interrupt handler, we need to register it by making our own initialization function. Note that we have to call this function in our `main` function. We need to make sure we disable interrupts in the beginning (so that they don't mess up our initialization), and then re-enable them at the end. We also have to enable interrupts at our line to let the CPU know that we're ready to handle interrupts at it.
 ```c
 int myinit() {
 	// disable interrupts
 	cli();
 
-	// initialize interrupts
-	// and register handler
-	iinit();
+	// register handler
+	// and enable line
 	iset(IRQLINE, myhandler);
+	ienable(IRQLINE);
 
 	// initialize other stuff here
 	// re-enable interrupts
