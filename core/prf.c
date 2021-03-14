@@ -67,7 +67,7 @@ out:
 }
 
 /*
- * initiates a kernel panic
+ * initiates a panic
  * used for fatal, unsolvable errors
  */
 int panic(const char *str) {
