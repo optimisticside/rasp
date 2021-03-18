@@ -9,4 +9,10 @@ typedef unsigned short		ushort;
 typedef unsigned int		uint;
 typedef unsigned long		ulong;
 
+/*
+ * memory barrier
+ * used to prevent compile from messing stuff up
+ */
+#define barrier		asm volatile ("" ::: "memory")
+
 #endif /* DEF_H */

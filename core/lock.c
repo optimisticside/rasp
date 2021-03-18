@@ -19,5 +19,6 @@ int slock(int *lk) {
  * just sets its value
  */
 int srele(int *lk) {
+	barrier();
 	*lk = 0;
 }
