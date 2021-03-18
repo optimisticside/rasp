@@ -10,7 +10,7 @@ typedef unsigned int		uint;
 typedef unsigned long		ulong;
 
 /*
- * memory barrier
+ * memory read-write barrier
  * used to prevent compile from messing stuff up
  */
 #define barrier		asm volatile ("" ::: "memory")
