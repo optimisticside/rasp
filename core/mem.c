@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "core/core.h"
 
 /*
  * memory area strucure
