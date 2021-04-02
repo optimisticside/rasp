@@ -83,7 +83,7 @@ char *calloc(int size, int unit) {
 }
 ```
 
-Memory is split into a linked list of areas. Eash area has a fixed size which is calculated upon start-up. This is done so that we don't accidently write to memory that's reserved by the BIOS or something else. Each memory area has a header, which stores information about it's size and boundaries, headers, and link to next area.
+Memory is split into a linked list of areas. Eash area has a fixed size which is calculated upon start-up. This is done so that we don't accidently write to memory that's reserved by the BIOS or mapped to device registers or something else. Each memory area has a header, which stores information about it's size and boundaries, headers, and link to next area.
 
 Each memory allocation has a header that corresponds to it. Each allocation header keeps track of the size, pointer to corresponding memory area header, and pointer to next header (if existent).
 
