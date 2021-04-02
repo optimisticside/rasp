@@ -7,7 +7,7 @@
  * reads a byte from memory mapped io
  * reads 8 bits
  */
-static inline uchar getb(int reg)
+static inline uchar getb(char *reg)
 {
 	return *((volatile uchar *)reg);
 }
@@ -17,7 +17,7 @@ static inline uchar getb(int reg)
  * reads a word from memory mapped io
  * reads 16 bits
  */
-static inline ushort getw(int reg)
+static inline ushort getw(char *reg)
 {
 	return *((volatile ushort *)reg);
 }
@@ -26,7 +26,7 @@ static inline ushort getw(int reg)
  * reads a long from memory mapped io
  * reads 32 bits
  */
-static inline uint getl(int reg)
+static inline uint getl(char *reg)
 {
 	return *((volatile uint *)reg);
 }
@@ -35,7 +35,7 @@ static inline uint getl(int reg)
  * reads a quadword from memory mapped io
  * reads 64 bits
  */
-static inline ulong getq(int reg)
+static inline ulong getq(char *reg)
 {
 	return *((volatile ulong *)reg);
 }
@@ -44,7 +44,7 @@ static inline ulong getq(int reg)
  * writes a byte to memory mapped io
  * writes 8 bits
  */
-static inline int putb(int reg, uchar val)
+static inline int putb(char *reg, uchar val)
 {
 	*((volatile uchar *)reg) = val;
 }
@@ -53,7 +53,7 @@ static inline int putb(int reg, uchar val)
  * writes a word to memory mapped io
  * writes 16 bits
  */
-static inline int putw(int reg, ushort val)
+static inline int putw(char *reg, ushort val)
 {
 	*((volatile ushort *)reg) = val;
 }
@@ -62,7 +62,7 @@ static inline int putw(int reg, ushort val)
  * writes a long to memory mapped io
  * writes 32 bits
  */
-static inline int putl(int reg, uint val)
+static inline int putl(char *reg, uint val)
 {
 	*((volatile uint *)reg) = val;
 }
@@ -71,7 +71,7 @@ static inline int putl(int reg, uint val)
  * writes a quadword to memory mapped io
  * writes 64 bits
  */
-static inline int putq(int reg, ulong val)
+static inline int putq(char *reg, ulong val)
 {
 	*((volatile ulong *)reg) = val;
 }
