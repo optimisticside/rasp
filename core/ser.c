@@ -19,7 +19,7 @@ int sinit() {
  * tells us if ready to read or write
  */
 int slsr() {
-	return getl(LSRREG);
+	return getl(SLSRREG);
 }
 
 /*
@@ -28,7 +28,7 @@ int slsr() {
  */
 int sread() {
 	while (slsr() & 0x01);
-	return getl(IOREG) & 0xFF;
+	return getl(SIOREG) & 0xFF;
 
 }
 
@@ -38,5 +38,5 @@ int sread() {
  */
 int swrite(int ch) {
 	while (slsr() & 0x20);
-	putl(IOREG, ch);
+	putl(SIOREG, ch);
 }
